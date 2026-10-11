@@ -122,3 +122,13 @@ footer { background-color: var(--verde-escuro); color: var(--branco); text-align
     .hero, .secao { max-width: 1300px; }
     .card { grid-column: span 4; }
 }
+
+
+/* Destaque para navegação pelo teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #d97706;
+    outline-offset: 3px;
+}
