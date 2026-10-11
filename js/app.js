@@ -105,12 +105,91 @@ if (pagina === "projetos") {
 }
 
 
-    if (pagina === "cadastro") {
-        conteudo.innerHTML = `
-            <h2>Cadastro</h2>
-            <p>Faça parte da Patas Amigas.</p>
-        `;
-    }
+    
+if (pagina === "cadastro") {
+    conteudo.innerHTML = `
+        <section class="secao">
+            <h2>Faça parte da Patas Amigas</h2>
+
+            <form id="formulario">
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="nascimento">Data de nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf"
+                           placeholder="000.000.000-00"
+                           pattern="[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}-[0-9]{2}"
+                           required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone"
+                           placeholder="(11) 99999-9999"
+                           pattern="\\([0-9]{2}\\) [0-9]{5}-[0-9]{4}"
+                           required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PR">Paraná</option>
+                    </select>
+
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep"
+                           placeholder="00000-000"
+                           pattern="[0-9]{5}-[0-9]{3}"
+                           required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Como deseja ajudar?</legend>
+
+                    <div class="opcao">
+                        <input type="radio" id="voluntario"
+                               name="ajuda" value="voluntario" required>
+                        <label for="voluntario">Quero ser voluntário</label>
+                    </div>
+
+                    <div class="opcao">
+                        <input type="radio" id="doador"
+                               name="ajuda" value="doador">
+                        <label for="doador">Quero fazer doações</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="botao">
+                    Enviar cadastro
+                </button>
+
+                <p id="mensagem" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    `;
+
+    configurarFormulario();
+}
+
 }
 
 
