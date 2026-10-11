@@ -132,3 +132,18 @@ select:focus-visible {
     outline: 3px solid #d97706;
     outline-offset: 3px;
 }
+
+/* Link de acessibilidade */
+.pular-conteudo {
+    position: absolute;
+    left: 10px;
+    top: -50px;
+    background: white;
+    color: black;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.pular-conteudo:focus {
+    top: 10px;
+}
