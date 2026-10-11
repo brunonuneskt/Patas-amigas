@@ -2,12 +2,60 @@
 const conteudo = document.getElementById("conteudo");
 
 function mostrarPagina(pagina) {
-    if (pagina === "inicio") {
-        conteudo.innerHTML = `
-            <h2>Quem somos</h2>
-            <p>Conheça a ONG Patas Amigas.</p>
-        `;
-    }
+    
+if (pagina === "inicio") {
+    conteudo.innerHTML = `
+        <section class="hero">
+            <div class="hero-texto">
+                <h2>Quem somos</h2>
+                <p>
+                    A ONG Patas Amigas trabalha no resgate e cuidado de animais
+                    abandonados, ajudando na recuperação e na busca por um novo lar.
+                    Nosso objetivo é dar uma nova oportunidade para cães e gatos
+                    que precisam de cuidado e proteção.
+                </p>
+            </div>
+
+            <div class="hero-imagem">
+                <img src="../imagens/patas-amigas-banner.jpg"
+                     alt="Cão e gato representando a ONG Patas Amigas">
+            </div>
+        </section>
+
+        <section class="secao">
+            <h2>Como ajudar</h2>
+            <p>
+                Você pode ajudar através de doações, adoções responsáveis
+                ou participando das nossas atividades como voluntário.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Adote</h3>
+                    <p>Dê uma nova oportunidade para um animal resgatado.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Seja voluntário</h3>
+                    <p>Ajude nos cuidados e nas atividades da ONG.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Faça uma doação</h3>
+                    <p>Ajude com alimentos, medicamentos e outros cuidados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao contato">
+            <h2>Entre em contato</h2>
+            <p>E-mail: contato@patasamigas.org</p>
+            <p>Telefone: (11) 99999-9999</p>
+            <p>São Paulo - SP</p>
+        </section>
+    `;
+}
+
 
 
 if (pagina === "projetos") {
