@@ -1,0 +1,124 @@
+/* CORES E TAMANHOS DO SITE */
+:root {
+    --verde: #2E7D32;
+    --verde-escuro: #1B5E20;
+    --azul: #1565C0;
+    --amarelo: #F9A825;
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza: #757575;
+    --preto: #333333;
+
+    --fonte-pequena: 0.75rem;
+    --fonte-menor: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-grande: 1.5rem;
+    --fonte-titulo: 2rem;
+
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background-color: var(--cinza-claro); color: var(--preto); }
+h1 { font-size: var(--fonte-titulo); }
+h2 { font-size: var(--fonte-grande); }
+p { font-size: var(--fonte-normal); line-height: 1.5; }
+
+/* CABEÇALHO */
+.cabecalho { background-color: var(--verde); color: var(--branco); padding: 16px 30px; display: flex; justify-content: space-between; align-items: center; }
+.logo h1 { margin: 0; }
+
+/* MENU */
+.menu { display: flex; gap: 20px; }
+.menu a { color: var(--branco); text-decoration: none; }
+.menu a:hover { color: var(--amarelo); }
+.menu-item { position: relative; }
+.submenu { display: none; position: absolute; background-color: var(--branco); padding: 10px; min-width: 150px; }
+.submenu a { display: block; color: var(--preto); padding: 8px; }
+.menu-item:hover .submenu { display: block; }
+.menu-toggle { display: none; font-size: 25px; background: none; border: none; color: var(--branco); }
+
+/* CONTEÚDO PRINCIPAL */
+.hero { max-width: 1100px; margin: auto; padding: 32px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; align-items: center; }
+.hero-texto { grid-column: span 6; }
+.hero-imagem { grid-column: span 6; }
+.hero-imagem img { width: 100%; border-radius: 10px; }
+.secao { max-width: 1100px; margin: auto; padding: 32px; text-align: center; }
+
+/* CARDS */
+.cards { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+.card { grid-column: span 4; background-color: var(--branco); padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+.card:hover { box-shadow: 0 3px 8px var(--cinza); }
+.icone { font-size: 35px; }
+.imagem-projetos { width: 80%; max-width: 800px; border-radius: 10px; }
+
+/* BOTÕES */
+.botao { background-color: var(--verde); color: var(--branco); padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; cursor: pointer; transition: 0.3s; }
+.botao:hover { background-color: var(--verde-escuro); }
+.botao:focus { outline: 3px solid var(--amarelo); }
+.botao:active { transform: scale(0.98); }
+.botao:disabled { background-color: var(--cinza); }
+
+/* BADGES E ALERTAS */
+.badge { background-color: var(--verde); color: var(--branco); padding: 5px 10px; border-radius: 15px; font-size: var(--fonte-menor); }
+.badge.destaque { background-color: var(--amarelo); color: var(--preto); }
+.alerta { padding: 15px; margin: 20px 0; border-radius: 5px; }
+.sucesso { background-color: #DFF0D8; color: var(--verde-escuro); }
+.informacao { background-color: #D9EDF7; color: var(--azul); }
+
+/* FORMULÁRIO */
+.formulario-container { max-width: 700px; }
+form { text-align: left; }
+fieldset { background-color: var(--branco); border: 1px solid var(--cinza); margin-bottom: 20px; padding: 20px; }
+legend { color: var(--verde); font-weight: bold; }
+label { display: block; margin-top: 15px; }
+input, select { width: 100%; padding: 10px; margin-top: 5px; border: 2px solid var(--cinza); border-radius: 5px; }
+input:focus, select:focus { border-color: var(--azul); outline: none; }
+input:valid { border-color: var(--verde); }
+input:invalid { border-color: red; }
+.opcao { display: flex; align-items: center; gap: 8px; }
+.opcao input { width: auto; }
+.opcao label { margin: 0; }
+
+/* MODAL */
+.modal-exemplo { background-color: #DDDDDD; padding: 30px; margin-top: 30px; }
+.modal { background-color: var(--branco); max-width: 400px; margin: auto; padding: 25px; border-radius: 10px; text-align: center; }
+.modal-icone { display: block; color: var(--verde); font-size: 40px; }
+.modal-fechar { float: right; font-size: 25px; }
+
+/* RODAPÉ */
+footer { background-color: var(--verde-escuro); color: var(--branco); text-align: center; padding: 20px; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .menu { display: none; }
+    .menu-toggle { display: block; }
+    .hero-texto, .hero-imagem { grid-column: span 12; }
+    .card { grid-column: span 12; }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .menu { display: none; }
+    .menu-toggle { display: block; }
+    .hero-texto, .hero-imagem { grid-column: span 12; }
+    .card { grid-column: span 12; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-texto, .hero-imagem { grid-column: span 6; }
+    .card { grid-column: span 6; }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .card { grid-column: span 4; }
+}
+
+@media (min-width: 1440px) {
+    .hero, .secao { max-width: 1300px; }
+    .card { grid-column: span 4; }
+}
