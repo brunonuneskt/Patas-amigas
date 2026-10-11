@@ -147,3 +147,48 @@ select:focus-visible {
 .pular-conteudo:focus {
     top: 10px;
 }
+
+
+/* Modo de alto contraste */
+body.alto-contraste {
+    --verde: #000000;
+    --verde-escuro: #000000;
+    --azul: #FFFF00;
+    --amarelo: #FFFF00;
+    --branco: #000000;
+    --cinza-claro: #000000;
+    --cinza: #FFFFFF;
+    --preto: #FFFFFF;
+}
+
+/* Cabeçalho e rodapé */
+body.alto-contraste .cabecalho,
+body.alto-contraste footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFF00;
+}
+
+/* Links e botões */
+body.alto-contraste .menu a,
+body.alto-contraste .botao {
+    color: #FFFF00;
+}
+
+body.alto-contraste .botao {
+    border: 2px solid #FFFF00;
+}
+
+/* Campos do formulário */
+body.alto-contraste input,
+body.alto-contraste select {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+/* Destaque do teclado */
+body.alto-contraste :focus-visible {
+    outline: 3px solid #FFFF00;
+    outline-offset: 3px;
+}
