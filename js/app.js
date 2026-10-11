@@ -23,3 +23,16 @@ function mostrarPagina(pagina) {
         `;
     }
 }
+
+
+const links = document.querySelectorAll(".menu a");
+
+links.forEach(function(link) {
+    link.addEventListener("click", function(evento) {
+        evento.preventDefault();
+
+        const pagina = link.dataset.pagina;
+
+        mostrarPagina(pagina);
+    });
+});
