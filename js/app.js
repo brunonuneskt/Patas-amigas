@@ -204,3 +204,26 @@ links.forEach(function(link) {
         mostrarPagina(pagina);
     });
 });
+
+links.forEach(function(link) {
+    link.addEventListener("click", function(evento) {
+        evento.preventDefault();
+
+        const pagina = link.dataset.pagina;
+
+        mostrarPagina(pagina);
+    });
+});
+
+
+
+/* Botão de alto contraste */
+const botaoContraste = document.getElementById("botao-contraste");
+
+botaoContraste.addEventListener("click", function() {
+    document.body.classList.toggle("alto-contraste");
+
+    const ativado = document.body.classList.contains("alto-contraste");
+
+    botaoContraste.setAttribute("aria-pressed", String(ativado));
+});
